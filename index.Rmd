@@ -5,67 +5,77 @@ output: html_document
 
 ### Introduction
 
-An introduction of the problem domain and a description of the variable(s) you are choosing to analyze (and why!)
+In the Incarceration Project, I will analyze how racism exists in the prisons system in the United States from a few latitudes. Next, I will analyze 1. how the Prison population rate has changed from 1990 to 2018 for 5 randomly selected States. 2. a comparison of the population rate of each race in the United States according to the dataset I selected. 3. a map of the United States that exposes how each state in the United States ranks in terms of Prison population rate for each state in the U.S. The reason I chose these variables is to examine how geographic location (racial composition) affects prison population rate. 
 
 ### Summary Information
 
-Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
-
-These will likely be calculated using your DPLYR skills, answering questions such as: 
-
-- What is the average value of my variable across all the counties (in the current year)?
-- Where is my variable the highest / lowest?
-- How much has my variable change over the last N years?
-
-Feel free to calculate and report values that you find relevant. Again, remember that the purpose is to think about how these measure of incarceration vary by race.
+1. Overall, how much has the black prison population rate increased?
+2107143
+2. Overall, how much has the white prison population rate increased?
+29870
+3. Which state has the largest black prison population rate?
+NC
+4. Which state has the largest white prison population rate?
+NE
+5. what is the average prison population rate change from 1990 to 2018? 
+increased by 220.9582
 
 ### The Dataset
 
 Who collected the data?  
+
+Vera Institute of Justice
+
 How was the data collected or generated?  
+
+Vera collects data through the Bureau of Justice Statistics (BJS) Census of Jails (COJ) and Annual Survey of Jails (ASJ) through the release of the Incarceration Trends data Tool.
+
 Why was the data collected?  
+
+The main purpose of collecting data is to study incarceration patterns in the U.S. and to study racial disparities, community influences, etc. to help inform policy makers.
+
 How many observations (rows) are in your data?  
+
+91031 rows
+
 How many features (columns) are in the data?  
+
+23 columns 
+
 What, if any, ethical questions or questions of power do you need to consider when working with this data?  
+
+I think there are two issues that need to be considered: 1. Data privacy. Although the data in this database are displayed in the form of regions, the personal privacy behind the data still needs to be considered. 2. Reinforced stereotypes. The use and analysis of data may potentially reinforce stereotypes and the policy-based discrimination that may result needs to be considered.
+
 What are possible limitations or problems with this data?   (at least 200 words)
 
+1. Data coverage is not comprehensive. When completing this assignment, I noticed that certain data in many areas was "0". This may be true, but it may also be due to a lack of information due to incomplete collection of data. This may cause problems when studying a certain area. Or inaccurate research may occur during the time period of data, which will generally affect analysis and judgment.
+2. Different regions have different data collection standards due to differences in laws, enforcement, and statistics. Laws vary from state to state, making it difficult to apply uniform standards when enforcing incarceration policies. For example, one state's laws are stricter while another is more lenient, which cannot be unified when analyzing the data. The data from each state and the process of data collection may also lead to such differences, which can lead to inaccuracies and lack of uniformity in the study data.
+3. Policy changes due to time. The dataset I studied spans from 1990 to 2018. During this period, there may be changes in laws, enforcement, and statistical data standards, which is very unfavorable for studying trends caused by changes in time, which will lead to a period of investigation. The changing trend over time is affected by policy adjustments.
 
 ### Trends Over Time Chart
 
 Include a chart. Make sure to describe why you included the chart, and what patterns emerged
 
-The first chart that you will create and include will show the trend over time of your variable/topic. Think carefully about what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
-
-- Show more than one, but fewer than ~10 trends
-  - This may mean showing the same measure for different locations or different racial groups. Think carefully about a meaningful comparison of locations (e.g., the top 10 counties in a state, top 10 states, etc.)
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear legend title
-
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-``````{r, echo = FALSE, code = readLines("chart1_example.R")}
+```{r, echo = FALSE, code = readLines("Trend_chart.R")}
 ```
+
+In this graph, I randomly selected 5 states, California (CA), Texas (TX), New York (NY), Florida (FL), and Illinois (IL), and showed a graph of the change in the prison population rate from 1990 to 2018. From this graph we can see that all four states except California have had significant increases in prison population rates over the 28-year period, with the two southern states, Texas and FL, having far higher crime rates than the rest of the states studied, but slowing down in the growth rate of their prison population rates around 2010, while the two northern states, NY and IL, have had a more steady rate of growth and have seen their prison population rates were lower among the five states studied. California, which had a high rate of prison population growth until 1997, had an essentially flat rate from 1997 to 2010, with a slowing trend after 2010.
 
 ### Variable Comparison Chart
 
 Include a chart. Make sure to describe why you included the chart, and what patterns emerged
 
-The second chart that you will create and include will show how two different (continuous) variables are related to one another. Again, think carefully about what such a comparison means and what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
+```{r, echo = FALSE, code = readLines("Comparison.R")}
+```
 
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- If you choose to add a color encoding (not required), you need a legend for your different color and a clear legend title
+On this graph, based on the data provided in the dataset, I compared the prison population rates of five races, Black, White, Native, Latinx, and Aapi. root absolute bar graph can be seen that the prison population rates of these five races from lowest to highest are Aapi, Native, White, Latinx, and Black. By comparing the five races in the bar graph, I believe that the reasons for this disparity may include the following: 1) systematic racial discrimination in law enforcement policies and the legal system; 2) unequal distribution of social resources such as the economy, education, healthcare, and employment; and 3) unequal distribution of resources among the public and private sectors. In summary, this chart exposes the racial distribution of prison population rates.
 
 ### Map
 
 Include a chart. Make sure to describe why you included the chart, and what patterns emerged
 
-The last chart that you will create and include will show how a variable is distributed geographically. Again, think carefully about what such a comparison means and what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
+```#{r, echo = FALSE, code = readLines("map-total-prison.R")}
+```
 
-- Your map needs a title
-- Your color scale needs a legend with a clear label
-- Use a map based coordinate system to set the aspect ratio of your map
+In this map of the United States, I have used the colors yellow and red to indicate the value of the prison population rate in each state. In this map, it can be seen that the southern states, such as Texas, have a higher prison population rate, which can be attributed to 1. drug offenses, 2. discrimination against minorities in the legal system in the southern states, and 3. the level of economic development, among other reasons.
 

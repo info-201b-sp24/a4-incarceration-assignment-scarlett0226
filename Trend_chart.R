@@ -18,8 +18,4 @@ ggplot(state_year_data, aes(x = year, y = avg_prison_rate, color = state, group 
        x = "Year",
        y = "Average Prison Population Rate",
        color = "State") +
-  theme_minimal()+
-  theme(axis.text = element_blank(),
-  axis.title = element_blank(),
-  panel.grid = element_blank())
-
+  theme_minimal()
