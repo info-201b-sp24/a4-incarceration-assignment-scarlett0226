@@ -74,7 +74,7 @@ On this graph, based on the data provided in the dataset, I compared the prison 
 
 Include a chart. Make sure to describe why you included the chart, and what patterns emerged
 
-```#{r, echo = FALSE, code = readLines("map-total-prison.R")}
+```{r, echo = FALSE, code = readLines("map.R")}
 ```
 
 In this map of the United States, I have used the colors yellow and red to indicate the value of the prison population rate in each state. In this map, it can be seen that the southern states, such as Texas, have a higher prison population rate, which can be attributed to 1. drug offenses, 2. discrimination against minorities in the legal system in the southern states, and 3. the level of economic development, among other reasons.
